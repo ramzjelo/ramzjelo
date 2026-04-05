@@ -1,0 +1,632 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>KABOWA HIGH SCHOOL ICT HUB | Innovative Solutions for Environmental Conservation & Sustainability</title>
+  <!-- Google Fonts + Smooth Scroll -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FBFCF8;
+      color: #2e7d32;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* custom utility */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .bg-light {
+      background-color: #F0F5EA;
+    }
+
+    .bg-white {
+      background-color: #ffffff;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #2C6E3F;
+      color: white;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #2C6E3F;
+      color: #2C6E3F;
+    }
+
+    .btn-outline:hover {
+      background-color: #2C6E3F;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .btn:hover {
+      background-color: #1E5130;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px -8px rgba(44,110,63,0.3);
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #1E3A2F;
+    }
+
+    .section-subhead {
+      font-size: 1.2rem;
+      color: #4A6652;
+      max-width: 700px;
+      margin-bottom: 48px;
+    }
+
+    /* header / nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 0;
+      flex-wrap: wrap;
+        background-color:burlywood
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #1F5E3A, #3B8F5C);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.02em;
+    }
+      header {
+      background: #2e8b57;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    nav {
+      background: #26532b;
+      text-align: center;
+    }
+    nav a {
+      display: inline-block;
+      margin: 0 1rem;
+      padding: 1rem 0;
+      color: #eafaea;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #fbcb43;
+    }
+    .hero {
+      padding: 3rem 1rem;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      color: white;
+      box-shadow: 0 2px 8px #00000020;
+    }
+
+    .logo img {
+      color: #2C6E3F;
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: #1E3A2F;
+      margin-right: 93px;
+    height: 120px;
+        position:CENTER
+            linear-gradient(rgba(0,0,0,0.6),rgba(0.0.0.0.6)),url("1.jpg")
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1E3A2F;
+      transition: color 0.8s;
+    }
+
+    .nav-links a:hover {
+      color: #2C6E3F;
+    }
+
+    /* hero */
+    .hero {
+      padding: 40px 0 60px 0;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-badge {
+      background: #E9F3E4;
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1F5E3A;
+      margin-bottom: 24px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      color: #122B1A;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #2C4435;
+      margin-bottom: 32px;
+      max-width: 550px;
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 25px 40px -12px rgba(0,0,0,0.15);
+    }
+
+    /* cards grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 28px;
+      padding: 32px 24px;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+      border: 1px solid #E2EBDC;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0, 32, 0, 0.1);
+      border-color:  #2e7d32;
+    }
+
+    .card-icon {
+      font-size: 2.8rem;
+      color: #2C6E3F;
+      margin-bottom: 24px;
+    }
+
+    .card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #4A5E51;
+    }
+
+    /* stats row */
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+      text-align: center;
+      background: #EFF7E9;
+      border-radius: 64px;
+      padding: 48px 40px;
+      margin-top: 32px;
+    }
+
+    .stat-item h3 {
+      font-size: 2.6rem;
+      margin-bottom: 8px;
+      color: #1B4D2E;
+    }
+
+    /* relevance section (societal & tech) */
+    .relevance-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .relevance-card {
+      flex: 1;
+      background: #FFFFFFDD;
+      backdrop-filter: blur(2px);
+      background: white;
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      border-left: 6px solid #2C6E3F;
+    }
+
+    .relevance-card i {
+      font-size: 2.4rem;
+      color: #2C6E3F;
+      margin-bottom: 20px;
+    }
+
+    .relevance-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      background: linear-gradient(120deg, #1C3D2A, #2A5A3E);
+      color: white;
+      border-radius: 48px;
+      padding: 64px 32px;
+    }
+
+    .cta-section h2 {
+      color: white;
+    }
+
+    .cta-section .btn {
+      background-color: #FFE9B6;
+      color: #1E3A2F;
+      margin-top: 24px;
+    }
+
+    .cta-section .btn:hover {
+      background-color: #FFE2A1;
+    }
+
+    /* footer */
+    footer {
+      background-color: #2e7d32;
+      color: #C8E0D0;
+      padding: 48px 0 24px;
+      margin-top: 40px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #2e7d32;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid #2e7d32;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 800px) {
+      .navbar {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      section {
+        padding: 60px 0;
+      }
+      .container {
+        padding: 0 24px;
+      }
+      .stats-row {
+        border-radius: 40px;
+        padding: 32px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+      <nav class="navbar">
+  <div class="logo">
+          <img src="1.jfif" alt="KABOWA HIGH SCHOOL  ICT HUB"><span style="color:#ffffff;">
+        <i class="fas fa-leaf"></i> KABOWA HIGH SCHOOL ICT HUB
+      </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#">Home</a></li>
+    <li><a href="#end">About</a></li>
+    <li><a href="Get%20involved.html">Get Involved</a></li>
+    <li><a href="#bottom">Contact</a></li>
+  </ul>
+  <div class="burger" id="burger">&#9776;</div>
+</nav>
+<style>
+.navbar {
+  background: #26532b;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 4%;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+.brand img { margin-right: 8px; }
+.nav-links {
+  display: flex; gap: 1.1rem; list-style: none;
+}
+.nav-links a {
+  color: #fff; text-decoration: none; font-weight: 500;
+  padding: 2px 7px; border-radius: 3px;
+  transition: background 0.15s;
+}
+.nav-links a:hover { background: #398956; color: #fbcb43; }
+.burger { display: none; font-size: 2rem; cursor: pointer; }
+@media (max-width: 700px) {
+  .nav-links {
+    display: none; position: absolute; right: 4%; top: 60px;
+    background: #26532b; flex-direction: column; padding: 0.8em 1em; border-radius: 6px;
+  }
+  .nav-links.show { display: flex; }
+  .burger { display: block; }
+}
+</style>
+<script>
+const burger = document.getElementById('burger');
+const nav = document.getElementById('navLinks');
+burger.onclick = () => nav.classList.toggle('show');
+</script>
+
+  <!-- Hero Section (home) -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fas fa-microchip"></i> AI + Nature • 2030 Vision</span>
+        <h1>Sensitisation for a <span style="color:##2e7d32;">regenerative planet</span></h1>
+        <p><span class="hero-badge"><i class="fas fa-microchip"></i><span style="color:##2e7d32;"> We merge cutting‑edge technology with ecological wisdom to restore ecosystems, cut carbon, and empower communities. Sustainability is no longer optional — it's the only way forward.</span></span></p>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="#solutions" class="btn"><i class="fas fa-seedling"></i> Explore innovations</a>
+          <a href="#relevance" class="btn btn-outline"><i class="fas fa-chart-line"></i> Societal impact</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- illustrative abstract green tech illustration: generated via emoji / svg feel, but using a modern inline svg to represent harmony -->
+            <img src="2">
+          <defs>
+            <linearGradient id="gradLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#3B8F5C" />
+              <stop offset="100%" stop-color="#1F5E3A" />
+            </linearGradient>
+          </defs>
+          <circle cx="200" cy="150" r="80" fill=" #2e7d32" opacity="0.6" />
+          <path d="M200,70 L220,110 L200,130 L180,110 Z" fill="url(#gradLeaf)" opacity="0.9" />
+          <path d="M170,140 L200,100 L230,140 L200,170 Z" fill="#4CAF7A" opacity="0.8" />
+          <circle cx="200" cy="150" r="30" fill="#F9F3D9" />
+          <path d="M200,130 L200,170 M185,150 L215,150" stroke="#2C6E3F" stroke-width="3" stroke-linecap="round" />
+          <rect x="280" y="180" width="50" height="70" rx="12" fill="#B7D0A5" />
+          <rect x="288" y="160" width="34" height="25" rx="6" fill="#D9E6C3" />
+          <path d="M70,230 L120,210 L110,260 L60,250 Z" fill="#7DAA6E" opacity="0.7" />
+          <path d="M330,260 L360,240 L355,280 L325,290 Z" fill="#5C8F4A" />
+          <path d="M50,280 L380,280" stroke=" #2e7d32" stroke-width="0" stroke-dasharray="6 6" />
+          <text x="75" y="280" font-size="12" fill=" #2e7d32" font-weight="bold">ALL BASED ON NATURE TO CREATE THE DIFFERENCE</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Section: core innovative tech -->
+  <section id="solutions" class="bg-light">
+    <div class="container">
+      <div style="text-align: center;">
+        <h2>⚡  Intelligent Ecosystems, Smarter Conservation Established </h2>
+        <div class="section-subhead">AI-driven monitoring, circular systems & regenerative agriculture — built for scale</div>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-satellite-dish"></i></div>
+          <h3>AI Forest Watch</h3>
+          <p>Real-time satellite + drone imagery powered by deep learning detects illegal logging, wildfires, and biodiversity shifts with 94% accuracy — enabling ranger teams to act in minutes.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-water"></i></div>
+          <h3>Plastic-to-Resource Hubs</h3>
+          <p>Decentralized recycling units using blockchain traceability convert ocean-bound plastic into 3D-printed building materials & furniture. Zero-waste circular economy.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-solar-panel"></i></div>
+          <h3>Agrivoltaic Canopies</h3>
+          <p>Smart solar panels above crops boost renewable energy yield while reducing water evaporation by 30% — AI adjusts tilt for optimal photosynthesis and energy generation.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-charging-station"></i></div>
+          <h3>Carbon-Negative Materials</h3>
+          <p>Mycelium composites & algae-based bioplastics that sequester CO₂ during production. Scalable construction alternatives that replace concrete and petroleum plastics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact metrics / stats -->
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item"><h3>1.4M+</h3><p>hectares monitored Research </p></div>
+      <div class="stat-item"><h3>127K tons</h3><p>plastic waste upcycled (2025)</p></div>
+      <div class="stat-item"><h3>73%</h3><p>avg. water savings in partner farms</p></div>
+      <div class="stat-item"><h3>180+</h3><p>green tech deployments globally</p></div>
+    </div>
+  </div>
+
+  <!-- Relevance to societal needs & technological advancement (core explanation) -->
+  <section id="relevance">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h2>Why this matters: society & technology in synergy</h2>
+        <div class="section-subhead">Environmental crisis is a human crisis — but technology unlocks regenerative pathways</div>
+      </div>
+      <div class="relevance-grid">
+        <div class="relevance-card">
+          <i class="fas fa-hand-holding-heart"></i>
+          <h3>Societal Needs</h3>
+          <p>Climate change disproportionately affects vulnerable communities, causing food insecurity, displacement, and health crises. Our solutions prioritize <strong>equitable access</strong> to clean air, safe water, and climate-resilient livelihoods. By empowering local stewardship, we tackle environmental injustice and create green jobs — over 5,200 sustainable roles generated in 2024 alone. Affordable clean energy, plastic-free cities, and regenerative agriculture meet basic human dignity while preserving nature for future generations.</p>
+        </div>
+        <div class="relevance-card">
+          <i class="fas fa-microchip"></i>
+          <h3>Technological Advancement</h3>
+          <p>We harness <strong>AIoT (Artifical interegence + Internet of Things)</strong>, advanced material science, and distributed ledgers to turn conservation into a data-driven, scalable movement. Edge computing sensors enable real-time biodiversity tracking; generative AI models predict pollution patterns; and smart contracts incentivize recycling via token rewards. These breakthroughs lower costs, increase transparency, and accelerate the transition from linear “take-make-waste” to circular systems. Technology becomes nature’s ally — not adversary.</p>
+        </div>
+      </div>
+      <!-- extra highlight: callout for innovation -->
+      <div style="margin-top: 58px; background: #E5F2DE; border-radius: 32px; padding: 42px 28px; text-align: center;">
+        <i class="fas fa-robot" style="font-size: 2rem; color: #2e7d32; margin-bottom: 18px; display: inline-block;"></i>
+        <h3 style="margin-bottom: 12px;">Next‑generation frontier: autonomous reforestation drones</h3>
+        <p style="max-width: 800px; margin: 0 auto;">Using computer vision and seed-firing pods, drones plant up to 40,000 trees per day. This fusion of robotics and ecology restores ecosystems 15%x faster than manual methods.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action / Contact -->
+  <div class="container" id="contact">
+    <div class="cta-section">
+      <h2>Join the Sensitisation revolution</h2>
+      <p style="font-size: 1.2rem; max-width: 600px; margin: 16px auto 0;">Whether you're a city leader, impact investor, or changemaker — let's build scalable sustainability together.</p>
+        <a href="Get%20involved.html" class="btn" style="background:#FFE9B6; color:#1E3A2F;"><i class="fas fa-envelope"></i> Partner with KABOWA HIGH SCHOOL ICT HUB</a>
+        <p id="end"></p>
+      <div style="margin-top: 32px; font-size: 0.9rem; opacity: 0.8;">📧 kabowahigh@gmail.com &nbsp;|&nbsp; 🌍 kabowa high school  Hubs: Kampala, Rubaga, Ssuna Zone
+    </div>
+        <p id="bottom"></p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo"><i class="fas fa-globe-americas"></i> KABOWA HIGH SCHOOL ICT HUB</div>
+        <div class="footer-links">
+          <a href="#">About us</a>
+          <a href="#">Research & Reports</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Ethics & AI</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <i class="far fa-copyright"></i> 2026 @KABOWA HIGH ICT HUB — bridging deep tech & ecological resilience. All systems sustainable.And  all rights reserved
+      </div>
+    </div>
+  </footer>
+
+  <!-- small JS for smooth interactive alert on CTA (just demo, not intrusive) -->
+  <script>
+    const ctaBtn = document.querySelector('.cta-section .btn');
+    if(ctaBtn) {
+      ctaBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert("🌱 Thank you for your interest! Our innovation team will reach out within 5 minutes . Together for a greener future.");
+      });
+    }
+    // optional: highlight nav active on scroll (simple)
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if(pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.style.color = '';
+        if(link.getAttribute('href') === `#${current}`) {
+          link.style.color = '#2e7d32';
+          link.style.fontWeight = '600';
+        } else {
+          link.style.fontWeight = '500';
+        }
+      });
+    });
+      <ul class="nav-links">
+        <li><a href="#contact">Connect</a></li>
+      </ul>
+  </script>
+</body>
+</html>
+```

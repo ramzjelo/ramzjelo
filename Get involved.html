@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Environmental Conservation</title>
+
+<style>
+:root {
+    --green: #2ecc71;
+    --deep-green: #27ae60;
+    --earth: #14532d;
+    --sky: #87CEEB;
+    --white: #ffffff;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+                url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glass eco card */
+.login-container {
+    width: 360px;
+    padding: 35px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    color: var(--white);
+    text-align: center;
+    animation: fadeout 1s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.logo {
+    font-size: 35px;
+}
+
+h2 {
+    margin: 10px 0;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    position: relative;
+}
+
+.input-group label {
+    font-size: 13px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 5px;
+    outline: none;
+}
+
+.input-group input:focus {
+    box-shadow: 0 0 10px var(--green);
+}
+
+/* Password toggle */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 38px;
+    cursor: pointer;
+}
+
+/* Button */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(to right, var(--green), var(--deep-green));
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* Error */
+.error {
+    color: #ff7b7b;
+    font-size: 12px;
+    display: none;
+}
+
+/* Footer links */
+.extra {
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.extra a {
+    color: #d4fcd4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.extra a:hover {
+    text-decoration: underline;
+}
+
+/* Dark toggle */
+.toggle-mode {
+    margin-top: 15px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media(max-width: 400px) {
+    .login-container {
+        width: 90%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-container">
+    <h2>KABOWA HIGH SCHOOL  ICT HUB</h2>
+    <p class="subtitle">Protecting Nature • Sustaining Life</p>
+
+    <form id="loginForm">
+        <div class="input-group">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <div class="error" id="emailError">Please enter a valid email</div>
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            <div class="error" id="passwordError">Minimum 6 characters required</div>
+        </div>
+
+        <button class="login-btn">Login</button>
+    </form>
+
+    <div class="extra">
+        <p><a href="khs.html"> Home  </a></p>
+    </div>
+
+</div>
+
+<script>
+// Show/Hide Password
+function togglePassword() {
+    let pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+}
+
+// Dark mode toggle
+function toggleMode() {
+    document.body.classList.toggle("dark");
+}
+
+// Validation
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
+
+    let emailError = document.getElementById("emailError");
+    let passwordError = document.getElementById("passwordError");
+
+    let valid = true;
+
+    if (!email.value.includes("@")) {
+        emailError.style.display = "block";
+        valid = false;
+    } else {
+        emailError.style.display = "none";
+    }
+
+    if (password.value.length < 6) {
+        passwordError.style.display = "block";
+        valid = false;
+    } else {
+        passwordError.style.display = "none";
+    }
+
+    if (valid) {
+        alert("KABOWA HIGH SCHOOL TECH  ICT HUB 🌍");
+    }
+});
+</script>
+
+</body>
+</html>
